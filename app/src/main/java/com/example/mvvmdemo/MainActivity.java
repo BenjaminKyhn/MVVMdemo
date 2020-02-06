@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showText(View view){
-        textInput = mainEditText.getText().toString();
-        mainText.setText(textInput);
+        Data data = new Data();
+        data.setTextInput(mainEditText.getText().toString());
+        mainText.setText(data.getTextInput());
     }
 }
