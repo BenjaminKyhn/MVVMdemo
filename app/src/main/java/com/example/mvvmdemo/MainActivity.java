@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mainText;
     EditText mainEditText;
     Button mainButton;
+    String textInput = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showText(View view){
-        mainText.setText("clicked");
+        textInput = mainEditText.getText().toString();
+        mainText.setText(textInput);
     }
 }
