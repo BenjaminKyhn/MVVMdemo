@@ -8,18 +8,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Text will be shown here"/>
 
     <EditText
+        android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Type here"/>
 
     <Button
+        android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
