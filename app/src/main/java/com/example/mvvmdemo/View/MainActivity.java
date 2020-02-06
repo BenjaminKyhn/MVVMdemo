@@ -3,13 +3,12 @@ package com.example.mvvmdemo.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.mvvmdemo.Model.ObservableText;
+import com.example.mvvmdemo.Model.Model;
 import com.example.mvvmdemo.R;
 
 import java.util.Observable;
@@ -21,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mainEditText;
     private Button mainButton;
 
-    ObservableText ot = new ObservableText();
-    TextObserver to = new TextObserver();
+    Model ot = new Model();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +31,29 @@ public class MainActivity extends AppCompatActivity {
         mainEditText = findViewById(R.id.mainEditText);
         mainButton = findViewById(R.id.mainButton);
 
-        ot.addObserver(to);
+        ot.addObserver(new Observer() {
+            @Override
+            public void update(Observable o, Object arg) {
+                mainText.setText(arg.toString());
+            }
+        });
     }
 
     public void showText(View view){
         ot.setInputText(mainEditText.getText().toString());
     }
 
-    public class TextObserver implements Observer{
-        @Override
-        public void update(Observable obs, Object obj){
-            Log.v("hej", "tommy");
-            mainText.setText(obj.toString());
-        }
+    public void setText(String inputText){
+        mainText.setText(inputText);
     }
+
+//    public class ViewModel implements Observer{
+//        @Override
+//        public void update(Observable obs, Object obj){
+//            Log.v("hej", "tommy");
+//            mainText.setText(obj.toString());
+//        }
+//    }
 }
 
 
