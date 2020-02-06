@@ -17,9 +17,9 @@ import java.util.Observer;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView mainText;
-    EditText mainEditText;
-    Button mainButton;
+    private TextView mainText;
+    private EditText mainEditText;
+    private Button mainButton;
 
     ObservableText ot = new ObservableText();
     TextObserver to = new TextObserver();
