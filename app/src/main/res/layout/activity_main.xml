@@ -34,7 +34,7 @@
         android:text="Button"/>
 
     <TextView
-        android:id="@+id/memeText"
+        android:id="@+id/secondText"
         android:layout_margin="16dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"

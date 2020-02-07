@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mainText;
     private EditText mainEditText;
     private Button mainButton;
+    private TextView secondText;
 
     Model ot = new Model(); //ot = observable text
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mainText = findViewById(R.id.mainText);
         mainEditText = findViewById(R.id.mainEditText);
         mainButton = findViewById(R.id.mainButton);
+        secondText = findViewById(R.id.secondText);
 
         ot.addObserver(new Observer() {
             @Override
