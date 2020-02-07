@@ -18,7 +18,7 @@ public class AndroidView extends AppCompatActivity {
     private Button mainButton;
     private TextView secondText;
     private LowerCasePresenter lowerCasePresenter = new LowerCasePresenter();
-    private Model ot = new Model(); //ot = observable text
+    private Model model = new Model(); //model = observable text
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,11 @@ public class AndroidView extends AppCompatActivity {
         mainButton = findViewById(R.id.mainButton);
         secondText = findViewById(R.id.secondText);
 
-        ot.addObserver(lowerCasePresenter);
+        model.addObserver(lowerCasePresenter);
     }
 
     public void showText(View view){
-        ot.setInputText(mainEditText.getText().toString());
+        model.setInputText(mainEditText.getText().toString());
         mainText.setText(lowerCasePresenter.getUncappedString());
         secondText.setText(mainEditText.getText().toString());
     }
