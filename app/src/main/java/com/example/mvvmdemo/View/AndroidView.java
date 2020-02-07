@@ -9,13 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mvvmdemo.Model.Model;
-import com.example.mvvmdemo.Model.TextWrapper;
 import com.example.mvvmdemo.R;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class MainActivity extends AppCompatActivity {
+public class AndroidView extends AppCompatActivity {
 
     private TextView mainText;
     private EditText mainEditText;
@@ -34,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         mainButton = findViewById(R.id.mainButton);
         secondText = findViewById(R.id.secondText);
 
-        final TextWrapper textWrapper = new TextWrapper();
+        final LowerCasePresenter viewModel = new LowerCasePresenter();
 
         ot.addObserver(new Observer() {
             @Override
             public void update(Observable o, Object arg) {
                 mainText.setText(arg.toString());
-                secondText.setText(textWrapper.uncapitalize(arg.toString()));
+                secondText.setText(viewModel.uncapitalize(arg.toString()));
             }
         });
     }

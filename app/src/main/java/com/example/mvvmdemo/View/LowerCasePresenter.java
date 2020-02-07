@@ -1,6 +1,6 @@
-package com.example.mvvmdemo.Model;
+package com.example.mvvmdemo.View;
 
-public class TextWrapper {
+public class LowerCasePresenter {
     public String uncapitalize(String string) {
         String uncappedString = "";
         for (int i = 0; i < string.length(); i++) {
