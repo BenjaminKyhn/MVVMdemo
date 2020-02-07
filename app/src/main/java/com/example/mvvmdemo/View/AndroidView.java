@@ -11,17 +11,14 @@ import android.widget.TextView;
 import com.example.mvvmdemo.Model.Model;
 import com.example.mvvmdemo.R;
 
-import java.util.Observable;
-import java.util.Observer;
-
 public class AndroidView extends AppCompatActivity {
 
     private TextView mainText;
     private EditText mainEditText;
     private Button mainButton;
     private TextView secondText;
-
-    Model ot = new Model(); //ot = observable text
+    private LowerCasePresenter lowerCasePresenter = new LowerCasePresenter();
+    private Model ot = new Model(); //ot = observable text
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +30,13 @@ public class AndroidView extends AppCompatActivity {
         mainButton = findViewById(R.id.mainButton);
         secondText = findViewById(R.id.secondText);
 
-        final LowerCasePresenter viewModel = new LowerCasePresenter();
-
-        ot.addObserver(new Observer() {
-            @Override
-            public void update(Observable o, Object arg) {
-                mainText.setText(arg.toString());
-                secondText.setText(viewModel.uncapitalize(arg.toString()));
-            }
-        });
+        ot.addObserver(lowerCasePresenter);
     }
 
     public void showText(View view){
         ot.setInputText(mainEditText.getText().toString());
+        mainText.setText(lowerCasePresenter.getUncappedString());
+        secondText.setText(mainEditText.getText().toString());
     }
 }
 

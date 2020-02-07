@@ -1,16 +1,21 @@
 package com.example.mvvmdemo.View;
 
-public class LowerCasePresenter {
-    public String uncapitalize(String string) {
-        String uncappedString = "";
-        for (int i = 0; i < string.length(); i++) {
-            if (((string.charAt(i) >= 'A') && (string.charAt(i) <= 'Z')) || (string.charAt(i) == 'Æ')  || (string.charAt(i) == 'Ø')  || (string.charAt(i) == 'Å')) {
-                uncappedString += Character.toLowerCase(string.charAt(i));
-            }
-            else {
-                uncappedString += string.charAt(i);
-            }
-        }
+import java.util.Observable;
+import java.util.Observer;
+
+public class LowerCasePresenter implements Observer {
+    String uncappedString = "";
+
+    @Override
+    public void update(Observable o, Object arg) {
+        uncapitalize(arg.toString());
+    }
+
+    public void uncapitalize(String string) {
+        uncappedString = string.toLowerCase();
+    }
+
+    public String getUncappedString() {
         return uncappedString;
     }
 }
