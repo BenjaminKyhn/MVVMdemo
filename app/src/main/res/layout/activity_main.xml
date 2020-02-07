@@ -39,6 +39,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView number 2"/>
+        android:text="Uncapitalized text will be shown here"/>
 
 </LinearLayout>
