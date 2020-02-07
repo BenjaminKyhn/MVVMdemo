@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mainEditText;
     private Button mainButton;
 
-    Model ot = new Model();
+    Model ot = new Model(); //ot = observable text
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +42,6 @@ public class MainActivity extends AppCompatActivity {
     public void showText(View view){
         ot.setInputText(mainEditText.getText().toString());
     }
-
-    public void setText(String inputText){
-        mainText.setText(inputText);
-    }
-
-//    public class ViewModel implements Observer{
-//        @Override
-//        public void update(Observable obs, Object obj){
-//            Log.v("hej", "tommy");
-//            mainText.setText(obj.toString());
-//        }
-//    }
 }
 
 
