@@ -33,4 +33,12 @@
         android:onClick="showText"
         android:text="Button"/>
 
+    <TextView
+        android:id="@+id/memeText"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView number 2"/>
+
 </LinearLayout>
